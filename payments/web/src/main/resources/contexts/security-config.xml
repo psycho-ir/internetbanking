@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans:beans xmlns="http://www.springframework.org/schema/security"
+             xmlns:beans="http://www.springframework.org/schema/beans"
+             xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+             xmlns:context="http://www.springframework.org/schema/context"
+             xsi:schemaLocation="http://www.springframework.org/schema/beans
+                                http://www.springframework.org/schema/beans/spring-beans-3.1.xsd
+                                http://www.springframework.org/schema/security
+                                http://www.springframework.org/schema/security/spring-security-3.1.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
+    <context:component-scan base-package="com.samenea.payments.security"/>
+
+    <http  use-expressions="true" entry-point-ref="authenticationEntryPoint"  >
+        <custom-filter position="PRE_AUTH_FILTER" ref="localAuthenticationProcessingFilter"/>
+        <intercept-url pattern="/deposit/**" access="permitAll" />
+        <intercept-url pattern="/help/**" access="permitAll" />
+        <intercept-url pattern="/error**" access="permitAll" />
+        <intercept-url pattern="/loan/**" access="permitAll" />
+        <intercept-url pattern="/contactus/**" access="permitAll" />
+        <intercept-url pattern="/tracking**" access="permitAll" />
+        <intercept-url pattern="/processTransactionResult/**" access="permitAll"/>
+        <intercept-url pattern="/admin/login/**" access="permitAll"/>
+        <intercept-url pattern="/loanInstallment/redirectToBank**" access="permitAll"/>
+        <intercept-url pattern="/resources/**" access="permitAll"/>
+        <intercept-url pattern="/payment/startTransaction/**" access="permitAll"/>
+        <intercept-url pattern="/revenu**" access="permitAll"/>
+        <intercept-url pattern="/index" access="permitAll"/>
+        <intercept-url pattern="/*.jpg" access="permitAll"/>
+        <intercept-url pattern="/" access="permitAll"/>
+        <intercept-url pattern="/**" access="isAuthenticated()"/>
+        <form-login login-page="/admin/login" default-target-url="/admin/follow" authentication-failure-url="/loginfailed"/>
+        <logout />
+    </http>
+
+    <beans:bean id="localAuthenticationProcessingFilter"
+                class="org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter">
+        <beans:property name="authenticationSuccessHandler" ref="authenticationSuccessHandler"/>
+        <beans:property name="authenticationFailureHandler" ref="authentincationFailureHandler"/>
+        <beans:property name="authenticationManager" ref="authenticationManager"/>
+    </beans:bean>
+    <authentication-manager alias="authenticationManager">
+
+        <authentication-provider user-service-ref="userService">
+            <password-encoder ref="passwordEncoder"/>
+        </authentication-provider>
+    </authentication-manager>
+
+    <beans:bean id="authenticationEntryPoint"
+                class="org.springframework.security.web.authentication.LoginUrlAuthenticationEntryPoint">
+        <beans:property name="loginFormUrl" value="/admin/login"/>
+    </beans:bean>
+
+    <beans:bean id="passwordEncoder" class="org.springframework.security.authentication.encoding.ShaPasswordEncoder"/>
+
+    <beans:bean id="authentincationFailureHandler"
+                class="org.springframework.security.web.authentication.ExceptionMappingAuthenticationFailureHandler">
+        <beans:property name="defaultFailureUrl" value="/admin/loginfailed"/>
+    </beans:bean>
+
+    <beans:bean id="authenticationSuccessHandler"
+                class="org.springframework.security.web.authentication.SavedRequestAwareAuthenticationSuccessHandler">
+        <beans:property name="defaultTargetUrl" value="/admin/follow" />
+    </beans:bean>
+
+</beans:beans>

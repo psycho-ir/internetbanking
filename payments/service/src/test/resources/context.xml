@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:tx="http://www.springframework.org/schema/tx"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+       http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd
+       http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-3.0.xsd"
+       default-lazy-init="true">
+    <bean id="environment" class="com.samenea.commons.component.utils.DefaultEnvironment" />
+
+    <import resource="classpath*:/contexts-banking/datasource.xml"/>
+    <import resource="classpath*:/contexts-banking/transaction-manager.xml"/>
+    <import resource="classpath:/contexts/mail.xml" />
+    <!--<import resource="classpath*:/service-context.xml" />-->
+
+    <import resource="classpath*:/contexts-commons-hibernate/datasource.xml"/>
+    <import resource="classpath*:/contexts-commons-hibernate/repository.xml"/>
+    <import resource="classpath*:/contexts-commons-hibernate/transaction-manager.xml"/>
+
+    <import resource="classpath*:context-idgenerator/*.xml"/>
+
+    <import resource="classpath:contexts/config.xml"/>
+    <import resource="classpath:contexts-tracking/*.xml"/>
+
+    <context:component-scan base-package="com.samenea.commons.tracking"/>
+    <context:component-scan base-package="com.samenea.payments"/>
+    <context:component-scan base-package="com.samenea.banking"/>
+
+    <context:spring-configured/>
+    <tx:annotation-driven transaction-manager="transactionManager" mode="aspectj"/>
+    <context:annotation-config/>
+
+    <bean id="productRepository" class="com.samenea.commons.model.repository.BasicRepositoryHibernate">
+        <constructor-arg value="com.samenea.payments.order.delivery.Delivery" />
+        <property name="sessionFactory" ref="sessionFactory"/>
+    </bean>
+
+</beans>

@@ -1,0 +1,74 @@
+
+    #chargeDepositViewModel > div {
+    direction: rtl;
+    font-family: tahoma,verdana;
+    font-size: 12px;
+    padding-bottom: 10px;
+    padding-right: 40px;
+    padding-top: 10px;
+    text-align: right;
+}
+
+label {
+    font-size: 11px !important;
+    direction: rtl;
+    font-family: tahoma, verdana;
+    text-align: right;
+}
+
+.part {
+    width: 30px;
+}
+
+.ltrBox {
+    direction: ltr !important;
+}
+
+.error {
+    color: red;
+    font-family: tahoma, verdana;
+    font-size: 11px;
+}
+
+.amount {
+    text-align: left;
+}
+
+.numeric {
+    text-align: left;
+}
+
+.sample {
+    color: #0099A1;
+    font-size: 9px !important;
+}
+
+.errorblock {
+    background-color: #FFEEEE;
+    border: 1px solid #FF0000;
+    color: #FF0000;
+    direction: rtl;
+    font-family: tahoma;
+    font-size: 10px;
+    margin: 16px;
+    padding: 8px;
+    text-align: right;
+}
+
+.highlight {
+    background: none repeat scroll 0 0;
+    border-color: red !important;
+    border-style: solid;
+    border-width: 1px;
+}
+
+.label {
+    float: left;
+}
+
+button {
+    cursor: pointer;
+}
+#btnReload {
+    cursor: pointer;
+}

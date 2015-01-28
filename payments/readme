@@ -1,0 +1,5 @@
+for building this project you need to add these properties in your settings.xml
+
+<simia.jdbc.url>jdbc:oracle:thin:@192.168.101.82:1521:stby</simia.jdbc.url>
+<simia.jdbc.username>s5samens</simia.jdbc.username>
+<simia.jdbc.password>123</simia.jdbc.password>

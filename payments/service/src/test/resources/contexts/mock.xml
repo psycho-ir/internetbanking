@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:mockito="http://www.mockito.org/spring/mockito"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans-2.5.xsd
+       http://www.mockito.org/spring/mockito http://www.mockito.org/spring/mockito.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
+    <mockito:mock id="orderRepository" class="com.samenea.payments.order.OrderRepository"/>
+    <!--<mockito:mock id="paymentManager" class="com.samenea.seapay.client.impl.DefaultPaymentManager"/>-->
+    <mockito:mock id="paymentSession" class="com.samenea.seapay.client.impl.DefaultPaymentSession"/>
+    <!--<mockito:mock id="clientOrderService" class="com.samenea.seapay.client.DefaultOrderService"/>-->
+    <mockito:mock id="orderService" class="com.samenea.payments.order.DefaultOrderService"/>
+    <mockito:mock id="seapayGatewayWebService" class="com.samenea.seapay.client.SeapayGatewayWebService"/>
+    <mockito:mock id="trackingService" class="com.samenea.commons.tracking.service.TrackingService"/>
+    <mockito:mock id="orderChangedEmailSender" class="com.samenea.payments.service.messaging.OrderChangedEmailSender"/>
+    <mockito:mock id="mockTrackingService" class="com.samenea.commons.tracking.service.TrackingService"/>
+    <mockito:spy beanName="defaultPaymentManager" />
+
+    <context:component-scan base-package="com.samenea.seapay" />
+
+</beans>

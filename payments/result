@@ -1,0 +1,183 @@
+[INFO] Scanning for projects...
+[WARNING] 
+[WARNING] Some problems were encountered while building the effective model for com.samenea.internetbanking.payments:internetbanking-payments-model:jar:1.0-SNAPSHOT
+[WARNING] 'parent.relativePath' points at com.samenea.internetbanking:internetbanking-payments instead of com.samenea:model, please verify your project structure @ line 7, column 13
+[WARNING] 'build.plugins.plugin.version' for org.codehaus.mojo:aspectj-maven-plugin is missing. @ com.samenea:model:1.0-SNAPSHOT, /home/soroosh/.m2/repository/com/samenea/model/1.0-SNAPSHOT/model-1.0-SNAPSHOT.pom, line 29, column 21
+[WARNING] 
+[WARNING] Some problems were encountered while building the effective model for com.samenea.internetbanking.payments:internetbanking-payments-repository-hibernate:jar:1.0-SNAPSHOT
+[WARNING] 'dependencies.dependency.(groupId:artifactId:type:classifier)' must be unique: com.samenea.internetbanking.payments:internetbanking-payments-model:jar -> version ${project.version} vs 1.0-SNAPSHOT @ line 72, column 21
+[WARNING] 'parent.relativePath' points at com.samenea.internetbanking:internetbanking-payments instead of com.samenea:repository, please verify your project structure @ line 4, column 13
+[WARNING] 'build.plugins.plugin.version' for org.codehaus.mojo:aspectj-maven-plugin is missing. @ line 119, column 21
+[WARNING] 
+[WARNING] Some problems were encountered while building the effective model for com.samenea.internetbanking.payments:internetbanking-payments-service:jar:1.0-SNAPSHOT
+[WARNING] 'dependencies.dependency.(groupId:artifactId:type:classifier)' must be unique: com.samenea.internetbanking.payments:internetbanking-payments-repository-hibernate:jar -> version ${project.version} vs 1.0-SNAPSHOT @ line 63, column 21
+[WARNING] 'parent.relativePath' points at com.samenea.internetbanking:internetbanking-payments instead of com.samenea:service, please verify your project structure @ line 4, column 13
+[WARNING] 
+[WARNING] Some problems were encountered while building the effective model for com.samenea.internetbanking.payments:web:war:1.0-SNAPSHOT
+[WARNING] 'parent.relativePath' points at com.samenea.internetbanking:internetbanking-payments instead of com.samenea:web, please verify your project structure @ line 10, column 13
+[WARNING] 'build.plugins.plugin.version' for org.codehaus.mojo:aspectj-maven-plugin is missing. @ line 938, column 21
+[WARNING] 
+[WARNING] Some problems were encountered while building the effective model for com.samenea.internetbanking:internetbanking-payments:pom:1.0-SNAPSHOT
+[WARNING] 'dependencies.dependency.(groupId:artifactId:type:classifier)' must be unique: org.springframework:spring-test:jar -> duplicate declaration of version ${spring.version} @ com.samenea:projects:1.0-SNAPSHOT, /home/soroosh/.m2/repository/com/samenea/projects/1.0-SNAPSHOT/projects-1.0-SNAPSHOT.pom, line 145, column 21
+[WARNING] 
+[WARNING] It is highly recommended to fix these problems because they threaten the stability of your build.
+[WARNING] 
+[WARNING] For this reason, future Maven versions might no longer support building such malformed projects.
+[WARNING] 
+[INFO] ------------------------------------------------------------------------
+[INFO] Reactor Build Order:
+[INFO] 
+[INFO] internetbanking-payments-model
+[INFO] internetbanking-payments-repository-hibernate
+[INFO] internetbanking-payments-service
+[INFO] web
+[INFO] internetbanking-payments
+[INFO]                                                                         
+[INFO] ------------------------------------------------------------------------
+[INFO] Building internetbanking-payments-model 1.0-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] --- maven-clean-plugin:2.4.1:clean (default-clean) @ internetbanking-payments-model ---
+[INFO] Deleting /home/soroosh/idea/projects/payment/payments/model/target
+[INFO] 
+[INFO] --- maven-resources-plugin:2.5:resources (default-resources) @ internetbanking-payments-model ---
+[debug] execute contextualize
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 0 resource
+[INFO] Copying 0 resource
+[INFO] 
+[INFO] --- maven-compiler-plugin:2.3.2:compile (default-compile) @ internetbanking-payments-model ---
+[INFO] Compiling 31 source files to /home/soroosh/idea/projects/payment/payments/model/target/classes
+[INFO] 
+[INFO] --- aspectj-maven-plugin:1.4-SONATYPE-13219:compile (default) @ internetbanking-payments-model ---
+[WARNING] advice defined in org.springframework.orm.jpa.aspectj.JpaExceptionTranslatorAspect has not been applied [Xlint:adviceDidNotMatch]
+[WARNING] advice defined in org.springframework.scheduling.aspectj.AbstractAsyncExecutionAspect has not been applied [Xlint:adviceDidNotMatch]
+[WARNING] advice defined in org.springframework.mock.staticmock.AnnotationDrivenStaticEntityMockingControl has not been applied [Xlint:adviceDidNotMatch]
+[WARNING] advice defined in org.springframework.mock.staticmock.AbstractMethodMockingControl has not been applied [Xlint:adviceDidNotMatch]
+[WARNING] advice defined in org.springframework.mock.staticmock.AbstractMethodMockingControl has not been applied [Xlint:adviceDidNotMatch]
+[INFO] 
+[INFO] --- maven-resources-plugin:2.5:testResources (default-testResources) @ internetbanking-payments-model ---
+[debug] execute contextualize
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 7 resources
+[INFO] Copying 0 resource
+[INFO] 
+[INFO] --- maven-compiler-plugin:2.3.2:testCompile (default-testCompile) @ internetbanking-payments-model ---
+[INFO] Compiling 12 source files to /home/soroosh/idea/projects/payment/payments/model/target/test-classes
+[INFO] 
+[INFO] --- aspectj-maven-plugin:1.4-SONATYPE-13219:test-compile (default) @ internetbanking-payments-model ---
+[WARNING] advice defined in org.springframework.orm.jpa.aspectj.JpaExceptionTranslatorAspect has not been applied [Xlint:adviceDidNotMatch]
+[WARNING] advice defined in org.springframework.scheduling.aspectj.AbstractAsyncExecutionAspect has not been applied [Xlint:adviceDidNotMatch]
+[WARNING] advice defined in org.springframework.mock.staticmock.AnnotationDrivenStaticEntityMockingControl has not been applied [Xlint:adviceDidNotMatch]
+[WARNING] advice defined in org.springframework.mock.staticmock.AbstractMethodMockingControl has not been applied [Xlint:adviceDidNotMatch]
+[WARNING] advice defined in org.springframework.mock.staticmock.AbstractMethodMockingControl has not been applied [Xlint:adviceDidNotMatch]
+[INFO] 
+[INFO] --- maven-surefire-plugin:2.10:test (default-test) @ internetbanking-payments-model ---
+[INFO] Surefire report directory: /home/soroosh/idea/projects/payment/payments/model/target/surefire-reports
+
+-------------------------------------------------------
+ T E S T S
+-------------------------------------------------------
+Running com.samenea.payments.order.LineItemTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.072 sec
+Running com.samenea.payments.order.OrderTest
+[PAYMENTS] [main] INFO - xml.XmlBeanDefinitionReader  | Loading XML bean definitions from class path resource [context.xml]
+[PAYMENTS] [main] INFO - xml.XmlBeanDefinitionReader  | Loading XML bean definitions from class path resource [contexts/config.xml]
+[PAYMENTS] [main] INFO - xml.XmlBeanDefinitionReader  | Loading XML bean definitions from class path resource [contexts/mock.xml]
+[PAYMENTS] [main] INFO - support.AbstractApplicationContext  | Refreshing org.springframework.context.support.GenericApplicationContext@14377358: startup date [Tue Nov 12 14:09:00 IRST 2013]; root of context hierarchy
+[PAYMENTS] [main] INFO - support.PropertiesLoaderSupport  | Loading properties file from URL [file:/home/soroosh/idea/projects/payment/payments/model/target/test-classes/banking.properties]
+[PAYMENTS] [main] INFO - support.PropertiesLoaderSupport  | Loading properties file from URL [file:/home/soroosh/idea/projects/payment/payments/model/target/test-classes/tracking.properties]
+[PAYMENTS] [main] INFO - support.DefaultListableBeanFactory  | Pre-instantiating singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@1224773e: defining beans [org.springframework.context.config.internalBeanConfigurerAspect,org.springframework.context.annotation.internalConfigurationAnnotationProcessor,org.springframework.context.annotation.internalAutowiredAnnotationProcessor,org.springframework.context.annotation.internalRequiredAnnotationProcessor,org.springframework.context.annotation.internalCommonAnnotationProcessor,org.springframework.context.annotation.internalPersistenceAnnotationProcessor,propertyConfigurer,orderService,applicationEventCollector,environment,deliveryDispatcher,idGeneratorFactory,mockDepositService,mockEnvironment,mockDepositChargeService,mockOrderRepository,mockBankingLoanService,mockCustomerService,mockLoanService,productRepository,mockOrderResolver,org.springframework.context.annotation.ConfigurationClassPostProcessor$ImportAwareBeanPostProcessor#0]; root of factory hierarchy
+[PAYMENTS] [main] DEBUG - testutils.ApplicationEventCollector  | ****** Event Occurred is : source org.springframework.context.support.GenericApplicationContext@14377358: startup date [Tue Nov 12 14:09:00 IRST 2013]; root of context hierarchy and time stamp is 1384252740706
+[PAYMENTS] [main] INFO - event.OrderStatusChanged  | Order:ORD-1 status is changed to POSTPONED
+[PAYMENTS] [main] DEBUG - testutils.ApplicationEventCollector  | ****** Event Occurred is : source Order{orderId='ORD-1', status=POSTPONED, deliveryService=Mock for DeliveryService, hashCode: 2142528616, receipt=Receipt{receiptId='receiptId', paymentSystem='paymentSystem'}, customer=CustomerInfo{phoneNumber='91211212121', email='a@gmail.com'}, lineItems =
+1. LineItem{productSpec=ProductSpec{productionName='Deposit', criteria='accountId == 12221'}, price=100}
+2. LineItem{productSpec=ProductSpec{productionName='Product', criteria='prop1 == value1 and prop2 == value2'}, price=100}
+} and time stamp is 1384252741037
+[PAYMENTS] [main] INFO - event.OrderStatusChanged  | Order:ORD-1 status is changed to POSTPONED
+[PAYMENTS] [main] DEBUG - testutils.ApplicationEventCollector  | ****** Event Occurred is : source Order{orderId='ORD-1', status=POSTPONED, deliveryService=Mock for DeliveryService, hashCode: 2142528616, receipt=Receipt{receiptId='receiptId', paymentSystem='paymentSystem'}, customer=CustomerInfo{phoneNumber='91211212121', email='a@gmail.com'}, lineItems =
+1. LineItem{productSpec=ProductSpec{productionName='Deposit', criteria='accountId == 12221'}, price=100}
+2. LineItem{productSpec=ProductSpec{productionName='Product', criteria='prop1 == value1 and prop2 == value2'}, price=100}
+} and time stamp is 1384252741043
+[PAYMENTS] [main] INFO - event.OrderStatusChanged  | Order:ORD-1 status is changed to POSTPONED
+[PAYMENTS] [main] DEBUG - testutils.ApplicationEventCollector  | ****** Event Occurred is : source Order{orderId='ORD-1', status=POSTPONED, deliveryService=Mock for DeliveryService, hashCode: 2142528616, receipt=Receipt{receiptId='receiptId', paymentSystem='paymentSystem'}, customer=CustomerInfo{phoneNumber='91211212121', email='a@gmail.com'}, lineItems =
+1. LineItem{productSpec=ProductSpec{productionName='Product', criteria='prop1 == value1 and prop2 == value2'}, price=100}
+} and time stamp is 1384252741071
+[PAYMENTS] [main] INFO - event.OrderStatusChanged  | Order:ORD-1 status is changed to POSTPONED
+[PAYMENTS] [main] DEBUG - testutils.ApplicationEventCollector  | ****** Event Occurred is : source Order{orderId='ORD-1', status=POSTPONED, deliveryService=Mock for DeliveryService, hashCode: 2142528616, receipt=Receipt{receiptId='receiptId', paymentSystem='paymentSystem'}, customer=CustomerInfo{phoneNumber='91211212121', email='a@gmail.com'}, lineItems =
+1. LineItem{productSpec=ProductSpec{productionName='Product', criteria='prop1 == value1 and prop2 == value2'}, price=100}
+} and time stamp is 1384252741075
+[PAYMENTS] [main] INFO - event.OrderStatusChanged  | Order:ORD-1 status is changed to POSTPONED
+[PAYMENTS] [main] DEBUG - testutils.ApplicationEventCollector  | ****** Event Occurred is : source Order{orderId='ORD-1', status=POSTPONED, deliveryService=Mock for DeliveryService, hashCode: 2142528616, receipt=Receipt{receiptId='receiptId2', paymentSystem='paymentSystem'}, customer=CustomerInfo{phoneNumber='91211212121', email='a@gmail.com'}, lineItems =
+1. LineItem{productSpec=ProductSpec{productionName='Product', criteria='prop1 == value1 and prop2 == value2'}, price=100}
+} and time stamp is 1384252741079
+[PAYMENTS] [main] INFO - event.OrderStatusChanged  | Order:ORD-1 status is changed to POSTPONED
+[PAYMENTS] [main] DEBUG - testutils.ApplicationEventCollector  | ****** Event Occurred is : source Order{orderId='ORD-1', status=POSTPONED, deliveryService=Mock for DeliveryService, hashCode: 2142528616, receipt=Receipt{receiptId='receiptId', paymentSystem='paymentSystem'}, customer=CustomerInfo{phoneNumber='91211212121', email='a@gmail.com'}, lineItems =
+1. LineItem{productSpec=ProductSpec{productionName='Product', criteria='prop1 == value1 and prop2 == value2'}, price=100}
+} and time stamp is 1384252741086
+Tests run: 26, Failures: 0, Errors: 7, Skipped: 0, Time elapsed: 1.469 sec <<< FAILURE!
+Running com.samenea.payments.order.ProductSpecTest
+Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.003 sec
+Running com.samenea.payments.order.OrderServiceTest
+Tests run: 5, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 0.083 sec <<< FAILURE!
+Running com.samenea.payments.model.banking.DefaultLoanServiceTest
+Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.048 sec
+Running com.samenea.payments.model.DefaultDepositChargeServiceTest
+[PAYMENTS] [main] WARN - model.DefaultDepositChargeServiceTest  | از سیستم پرداخت بابت شارژ سپرده با شماره تراکنش %s
+DEBIT DEBIT DEBIT:1113500101
+DEBIT DEBIT DEBIT:1113500101
+[PAYMENTS] [main] INFO - banking.DefaultDepositService  | ************ before check charging feasibility! 
+Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.091 sec
+Running com.samenea.payments.model.DepositParamsTest
+Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.009 sec
+Running com.samenea.payments.model.UserTest
+Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.013 sec
+Running com.samenea.payments.model.loan.DefaultLoanOrderServiceTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.08 sec
+Running com.samenea.payments.model.SpringSecurityBasedUserContextTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.008 sec
+Running com.samenea.payments.model.DefaultDepositOrderServiceTest
+Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.041 sec
+[PAYMENTS] [Thread-0] INFO - support.AbstractApplicationContext  | Closing org.springframework.context.support.GenericApplicationContext@14377358: startup date [Tue Nov 12 14:09:00 IRST 2013]; root of context hierarchy
+[PAYMENTS] [Thread-0] DEBUG - testutils.ApplicationEventCollector  | ****** Event Occurred is : source org.springframework.context.support.GenericApplicationContext@14377358: startup date [Tue Nov 12 14:09:00 IRST 2013]; root of context hierarchy and time stamp is 1384252741534
+[PAYMENTS] [Thread-0] INFO - support.DefaultSingletonBeanRegistry  | Destroying singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@1224773e: defining beans [org.springframework.context.config.internalBeanConfigurerAspect,org.springframework.context.annotation.internalConfigurationAnnotationProcessor,org.springframework.context.annotation.internalAutowiredAnnotationProcessor,org.springframework.context.annotation.internalRequiredAnnotationProcessor,org.springframework.context.annotation.internalCommonAnnotationProcessor,org.springframework.context.annotation.internalPersistenceAnnotationProcessor,propertyConfigurer,orderService,applicationEventCollector,environment,deliveryDispatcher,idGeneratorFactory,mockDepositService,mockEnvironment,mockDepositChargeService,mockOrderRepository,mockBankingLoanService,mockCustomerService,mockLoanService,productRepository,mockOrderResolver,org.springframework.context.annotation.ConfigurationClassPostProcessor$ImportAwareBeanPostProcessor#0]; root of factory hierarchy
+
+Results :
+
+Tests in error: 
+  checkOut_should_not_be_possible_for_already_delivered_order(com.samenea.payments.order.OrderTest): Unexpected exception, expected<java.lang.IllegalStateException> but was<java.lang.IllegalArgumentException>
+  deliver_should_call_delivery_service_on_every_line_items_product_spec(com.samenea.payments.order.OrderTest): Could not resolve placeholder 'banking.paymentSystem.debitNumber'
+  deliver_should_call_delivery_service_on_every_line_items_product_spec_for_Postponed_Delivery_Order(com.samenea.payments.order.OrderTest): Could not resolve placeholder 'banking.paymentSystem.debitNumber'
+  deliver_should_not_be_possible_for_already_delivered_order(com.samenea.payments.order.OrderTest): Unexpected exception, expected<java.lang.IllegalStateException> but was<java.lang.IllegalArgumentException>
+  deliver_should_raise_event_OnOrderDelivered(com.samenea.payments.order.OrderTest): Could not resolve placeholder 'banking.paymentSystem.debitNumber'
+  cancel_should_not_be_possible_in_DELIVERED_status(com.samenea.payments.order.OrderTest): Unexpected exception, expected<java.lang.IllegalStateException> but was<java.lang.IllegalArgumentException>
+  assignTransction_should_not_be_possible_DELIVERED_State(com.samenea.payments.order.OrderTest): Unexpected exception, expected<java.lang.IllegalStateException> but was<java.lang.IllegalArgumentException>
+  deliver_should_call_charge_deposit_on_banking(com.samenea.payments.order.OrderServiceTest): Could not resolve placeholder 'banking.mellat.debitNumber'
+
+Tests run: 53, Failures: 0, Errors: 8, Skipped: 0
+
+[INFO] ------------------------------------------------------------------------
+[INFO] Reactor Summary:
+[INFO] 
+[INFO] internetbanking-payments-model .................... FAILURE [14.972s]
+[INFO] internetbanking-payments-repository-hibernate ..... SKIPPED
+[INFO] internetbanking-payments-service .................. SKIPPED
+[INFO] web ............................................... SKIPPED
+[INFO] internetbanking-payments .......................... SKIPPED
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD FAILURE
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time: 15.630s
+[INFO] Finished at: Tue Nov 12 14:09:01 IRST 2013
+[INFO] Final Memory: 18M/217M
+[INFO] ------------------------------------------------------------------------
+[ERROR] Failed to execute goal org.apache.maven.plugins:maven-surefire-plugin:2.10:test (default-test) on project internetbanking-payments-model: There are test failures.
+[ERROR] 
+[ERROR] Please refer to /home/soroosh/idea/projects/payment/payments/model/target/surefire-reports for the individual test results.
+[ERROR] -> [Help 1]
+[ERROR] 
+[ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch.
+[ERROR] Re-run Maven using the -X switch to enable full debug logging.
+[ERROR] 
+[ERROR] For more information about the errors and possible solutions, please read the following articles:
+[ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoFailureException

@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:tx="http://www.springframework.org/schema/tx"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+	http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.0.xsd http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx.xsd">
+
+
+    <context:spring-configured/>
+    <context:load-time-weaver aspectj-weaving="on"/>
+    <context:component-scan base-package="com.samenea.payments"/>
+    <context:component-scan base-package="com.samenea.banking"/>
+    <context:component-scan base-package="com.samenea.seapay.client"/>
+    <context:component-scan base-package="com.samenea.commons.tracking"/>
+    <context:component-scan base-package="com.samenea.sms.wsclient"/>
+    <!--<context:component-scan base-package="com.samenea.commons.component"/>-->
+    <!--<context:component-scan base-package="com.samenea.common.security.repository"/>-->
+
+    <import resource="contexts/config.xml"/>
+    <tx:annotation-driven mode="aspectj"/>
+
+    <!--Hibernate Repository beans-->
+    <import resource="classpath:contexts-commons-hibernate/datasource.xml"/>
+    <import resource="classpath:contexts-commons-hibernate/repository.xml"/>
+    <import resource="classpath:contexts-commons-hibernate/transaction-manager.xml"/>
+    <tx:annotation-driven transaction-manager="transactionManager" mode="aspectj"/>
+    <import resource="classpath*:/contexts-banking/context.xml"/>
+    <import resource="classpath*:/contexts-seapay-client/web-service.xml"/>
+    <bean id="environment" class="com.samenea.commons.component.utils.DefaultEnvironment"/>
+    <bean id="userRepository" class="com.samenea.common.security.repository.UserRepositoryHibernate"/>
+    <bean id="roleRepository" class="com.samenea.common.security.repository.RoleRepositoryHibernate"/>
+    <bean id="userService" class="com.samenea.common.security.service.impl.UserServiceImpl"/>
+    <bean id="roleService" class="com.samenea.common.security.service.impl.RoleServiceImpl"/>
+    <import resource="classpath*:service-context.xml"/>
+    <import resource="classpath:contexts-tracking/*.xml"/>
+    <import resource="classpath:contexts/security-config.xml"/>
+    <import resource="classpath:context-idgenerator/*.xml"/>
+
+    <bean id="productRepository" class="com.samenea.commons.model.repository.BasicRepositoryHibernate">
+        <constructor-arg value="com.samenea.payments.order.delivery.Delivery" />
+        <property name="sessionFactory" ref="sessionFactory"/>
+    </bean>
+    <!--<bean id="ma" class="ChainedTransactionManager"></bean>-->
+</beans>

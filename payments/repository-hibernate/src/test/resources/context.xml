@@ -1,0 +1,25 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans-2.5.xsd
+       http://www.springframework.org/schema/context
+       http://www.springframework.org/schema/context/spring-context-3.1.xsd">
+
+    <context:component-scan base-package="com.samenea.payments" />
+    <!--Activates @Required, @Autowired, @PostConstruct, @PreDestroy and @Resource -->
+    <context:annotation-config />
+    <!--This switches on the load-time weaving for @Configurable annotated classes -->
+    <context:spring-configured />
+    <context:spring-configured/>
+	<import resource="classpath:contexts-commons-hibernate/*.xml"/>
+    <import resource="classpath:/contexts/config.xml" />
+    <import resource="classpath:context-idgenerator/*.xml" />
+    <bean id="defaultEnvironment" class="com.samenea.commons.component.utils.DefaultEnvironment"/>
+    <bean class="org.springframework.dao.annotation.PersistenceExceptionTranslationPostProcessor"/>
+    <bean id="productRepository" class="com.samenea.commons.model.repository.BasicRepositoryHibernate">
+        <constructor-arg value="com.samenea.payments.order.delivery.Delivery" />
+        <property name="sessionFactory" ref="sessionFactory"/>
+    </bean>
+    <bean id="fullXmlDataFileLoader" class="org.dbunit.util.fileloader.FullXmlDataFileLoader"/>
+</beans>
+       

@@ -1,0 +1,12 @@
+In order to run this project you need to add below properties in your settings.xml file.
+change them to appropriate value :)
+
+<internetbanking.oracle.url>jdbc:oracle:thin:@localhost:1521:XE</internetbanking.oracle.url>
+<internetbanking.oracle.username>internetbanking</internetbanking.oracle.username>
+<internetbanking.oracle.password>internetbanking</internetbanking.oracle.password>
+
+You need to create internetbanking user DBMS :
+create user internetbanking identified by internetbanking;
+
+Internetbanking user needs resource and connect privileges:
+grant resource,connect to internetbanking;

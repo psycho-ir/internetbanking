@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE tiles-definitions PUBLIC "-//Apache Software Foundation//DTD Tiles Configuration
+2.1//EN" "http://tiles.apache.org/dtds/tiles-config_2_1.dtd">
+<tiles-definitions>
+	<definition name="deposit/all" extends="default">
+		<put-attribute name="body" value="/WEB-INF/views/deposit/AllDeposits.jsp"></put-attribute>
+    </definition>
+    <definition name="deposit/charge" extends="default">
+        <put-attribute name="body" value="/WEB-INF/views/deposit/Charge.jsp"></put-attribute>
+    </definition>
+    <definition name="deposit/confirm" extends="default">
+        <put-attribute name="body" value="/WEB-INF/views/deposit/Confirm.jsp"></put-attribute>
+    </definition>
+    <definition name="deposit/result" extends="default">
+        <put-attribute name="body" value="/WEB-INF/views/deposit/Result.jsp"></put-attribute>
+    </definition>
+    <definition name="deposit/failed" extends="default">
+        <put-attribute name="body" value="/WEB-INF/views/deposit/Failed.jsp"></put-attribute>
+    </definition>
+    <definition name="/excption" extends="default">
+        <put-attribute name="body" value="/WEB-INF/views/deposit/Exception.jsp"></put-attribute>
+    </definition>
+    <definition name="/communicationException" extends="default">
+        <put-attribute name="body" value="/WEB-INF/views/deposit/CommunicationException.jsp"></put-attribute>
+    </definition>
+
+</tiles-definitions>

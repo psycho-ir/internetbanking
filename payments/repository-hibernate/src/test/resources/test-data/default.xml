@@ -1,0 +1,77 @@
+<dataset>
+    <table name="XORDER">
+        <column>id</column>
+        <column>version</column>
+        <column>orderId</column>
+        <column>createDate</column>
+        <column>email</column>
+        <column>phonenumber</column>
+        <column>paymentSystem</column>
+        <column>receiptId</column>
+        <column>status</column>
+        <row>
+            <value description="id">-1</value>
+            <value description="version">100</value>
+            <value description="orderId">ORD-100</value>
+            <value description="createDate">2012-07-30 10:12:12</value>
+            <value description="email">a@b.com</value>
+            <value description="phonenumber">09123142222</value>
+            <value description="paymentSystem">mellat</value>
+            <value description="receiptId">TRN-100</value>
+            <value description="status">MODIFIABLE</value>
+        </row>
+        <row>
+            <value description="id">-2</value>
+            <value description="version">10</value>
+            <value description="orderId">ORD-101</value>
+            <value description="createDate">2012-07-30 10:12:12</value>
+            <value description="email">c@d.com</value>
+            <value description="phonenumber">09123142222</value>
+            <value description="paymentSystem">seapay</value>
+            <value description="receiptId">TRN-102</value>
+            <value description="status">DELIVERED</value>
+        </row>
+    </table>
+    <table name="OrderLineItems">
+        <column>Order_id</column>
+        <column>price</column>
+        <column>criteria</column>
+        <column>productName</column>
+        <row>
+            <value description="Order_id">-1</value>
+            <value description="price">100</value>
+            <value description="criteria">depositNumber == 1212 and amount == 100</value>
+            <value description="productName">DepositCharge</value>
+        </row>
+        <row>
+            <value description="Order_id">-1</value>
+            <value description="price">100</value>
+            <value description="criteria">depositNumber == 1111 and amount == 100</value>
+            <value description="productName">DepositCharge</value>
+        </row>
+        <row>
+            <value description="Order_id">-2</value>
+            <value description="price">200</value>
+            <value description="criteria">depositNumber == 1122 and amount == 200</value>
+            <value description="productName">DepositCharge</value>
+        </row>
+    </table>
+
+    <!--create table OrderLineItems (-->
+    <!--Order_id number(19,0) not null,-->
+    <!--price number(10,0) not null,-->
+    <!--criteria varchar2(500 char) not null,-->
+    <!--productName varchar2(50 char) not null-->
+    <!--);-->
+    <!--create table XORDER (-->
+    <!--id number(19,0) not null,-->
+    <!--version number(19,0),-->
+    <!--orderId varchar2(255 char),-->
+    <!--paymentSystem varchar2(50 char) not null,-->
+    <!--receiptId varchar2(50 char) not null,-->
+    <!--status varchar2(255 char),-->
+    <!--primary key (id)-->
+    <!--);-->
+
+
+</dataset>

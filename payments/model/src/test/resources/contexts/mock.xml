@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:mockito="http://www.mockito.org/spring/mockito"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans-2.5.xsd
+       http://www.mockito.org/spring/mockito http://www.mockito.org/spring/mockito.xsd">
+    <mockito:mock id="environment" class="com.samenea.commons.component.utils.DefaultEnvironment"/>
+    <mockito:mock id="deliveryDispatcher" class="com.samenea.payments.order.delivery.DeliveryService"/>
+    <mockito:mock id="idGeneratorFactory" class="com.samenea.commons.idgenerator.service.IDGeneratorFactory"/>
+    <mockito:mock id="mockDepositService" class="com.samenea.banking.deposit.IDepositService"/>
+    <mockito:mock id="mockEnvironment" class="com.samenea.commons.component.utils.Environment"/>
+    <mockito:mock id="mockDepositChargeService" class="com.samenea.payments.model.banking.DepositChargeService"/>
+    <mockito:mock id="mockOrderRepository" class="com.samenea.payments.order.OrderRepository"/>
+    <mockito:mock id="mockBankingLoanService" class="com.samenea.banking.loan.ILoanService"/>
+    <mockito:mock id="mockCustomerService" class="com.samenea.banking.customer.ICustomerService"/>
+    <mockito:mock id="mockLoanService" class="com.samenea.payments.model.banking.LoanService"/>
+    <mockito:mock id="productRepository" class="com.samenea.commons.component.model.BasicRepository"/>
+    <mockito:mock id="mockOrderResolver" class="com.samenea.payments.order.OrderResolver"/>
+</beans>
